@@ -173,8 +173,13 @@ function ajaxPageContent(item) {
     })
     .then((html) => {
       const main = document.querySelector(".ajax-content")
-      main.insertAdjacentHTML("beforeend", html)
-      const currentPageContent = document.querySelectorAll("article")
+      main.insertAdjacentHTML(
+        "beforeend",
+        `<article class="${item.id}">${html}</article>
+`
+      )
+      //const currentPageContent = document.querySelectorAll("article")
+      //currentPageContent.forEach((el) => el.classList.add("show"))
 
       // Để có thể chạy file .js, nếu ko nó chỉ inject vào DOM mà ko đc call
       const script = document.createElement("script")
@@ -186,16 +191,28 @@ function ajaxPageContent(item) {
       console.error("Error on loading:", error)
     })
 }
+const currentPageContent = document.querySelectorAll("article")
+
+showCurrentPage = () => {
+  const currentPageContent = document.querySelectorAll("article")
+  currentPageContent.forEach((el) => el.classList.includes(`${item.id}`))
+  console.log(item)
+}
 
 menuItems.forEach((item) => {
+  currentPageContent.forEach((el) => el.classList.add("show"))
   item.onclick = () => {
-    if (
-      item.classList.contains("onhover") ||
-      ajaxContent.classList.contains(`${item.id}`)
-    ) {
+    if (item.classList.contains("onhover")) {
       console.log(`${item.id}.js already loaded`)
-
       return
+    } else if (
+      console.log(currentPageContent)
+      currentPageContent.forEach((el) => el.classList.includes(`${item.id}`))
+    ) {
+      console.log("hello")
+    } else {
+      // Run the page content - load by ajax
+      ajaxPageContent(item)
     }
 
     // When click - remove onhover class of every item element ò menuItems
@@ -206,13 +223,18 @@ menuItems.forEach((item) => {
     item.classList.add("onhover") // Thanks to item.onclick add onhover only on clicked item
     ajaxContent.setAttribute("data-set", item.id)
 
-    // In case mainContentDefault not exists
     if (mainContentDefault) {
+      // In case mainContentDefault not exists
       mainContentDefault.classList.add("hidden")
     }
 
-    // Run the page content - load by ajax
-    ajaxPageContent(item)
+    if (ajaxContent.dataset.set === item.id) {
+      const currentPageContentt = document.querySelectorAll("article")
+
+      currentPageContentt.forEach((el) => el.classList.toggle("ahoj"))
+    } else if (currentPageContent) {
+      console.log("not found")
+    }
   }
 })
 
