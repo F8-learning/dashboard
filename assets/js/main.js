@@ -1,4 +1,5 @@
 /* OTHER ELEMENTS */
+<<<<<<< HEAD
 const app = document.querySelector("app");
 const qSearchInput = document.querySelector("input.search");
 
@@ -21,6 +22,30 @@ const isMac = () => {
   const macPlatform = navigator.userAgentData.platform;
   return macPlatform.toLowerCase().includes("mac");
 };
+=======
+const app = document.querySelector("app")
+const qSearchInput = document.querySelector("input.search")
+
+/* MODALS */
+const modal = document.querySelector(".modal")
+const modalContents = document.querySelectorAll(".modal_content")
+const modalContentWrap = document.querySelector(".modal_wrapper")
+const modalClose = document.querySelector(".modal--close")
+
+/* TRIGGERS */
+const themeSwitcherTrigger = document.querySelector("#themeSwitcher")
+const modalThemeSwitcher = document.querySelector(".themeSwitcher_body")
+
+const modalSearchTrigger = document.querySelector(".search--icon")
+const modalSearch = document.querySelector(".modal.search_body")
+
+/* CHECKERS */
+const isWindows = navigator.userAgentData.platform === "Windows"
+const isMac = () => {
+  const macPlatform = navigator.userAgentData.platform
+  return macPlatform.toLowerCase().includes("mac")
+}
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 /*
 
 
@@ -32,6 +57,7 @@ const modalCloseIcon = `<svg
               <circle cx="12" cy="12" r="10" />
               <path d="m15 9-6 6" />
               <path d="m9 9 6 6" />
+<<<<<<< HEAD
             </svg>`;
 modalContents.forEach((modalContent) => {
   modalContent.insertAdjacentHTML("afterbegin", modalCloseIcon);
@@ -72,18 +98,68 @@ document.addEventListener("click", (e) => {
   if (modalContent.contains(e.target) && !_modalCloseIcon) return;
 
   const modalWrapper = modal.querySelector(".modal_wrapper");
+=======
+            </svg>`
+modalContents.forEach((modalContent) => {
+  modalContent.insertAdjacentHTML("afterbegin", modalCloseIcon)
+})
+
+/* THEMESWITCHER TRIGGER */
+themeSwitcherTrigger.addEventListener("click", (e) => {
+  app.style.filter = "blur(4px)"
+  modalThemeSwitcher.style.display = "block" // show modal
+  modalContentWrap.classList.remove("slide-out")
+  requestAnimationFrame(() => {
+    // Spusť tento kód, až budeš připraven vykreslovat další snímek. Zajistí, že se změny ve třídách (např. pro animace) skutečně vykreslí správně s přechody.
+
+    modalThemeSwitcher.classList.remove("hide")
+    modalThemeSwitcher.classList.add("show")
+  })
+})
+
+/* SEARCH TRIGGER */
+modalSearchTrigger.addEventListener("click", (e) => {
+  modalSearch.style.display = "block" // show modal
+  modalContentWrap.classList.remove("slide-out")
+  requestAnimationFrame(() => {
+    modalSearch.classList.remove("hide")
+    modalSearch.classList.add("show")
+  })
+})
+
+// CLOSE A MODAL
+document.addEventListener("click", (e) => {
+  const _modalCloseIcon = e.target.closest(".modal--close")
+  const modal = e.target.closest(".modal")
+
+  if (!modal) return // Fix lỗi console, khi modal chưa đc khởi tạo
+  const modalContent = modal.querySelector(".modal_content")
+
+  // Nếu ấn vào element của modalContent kết thúc hàm, ko làm gì nữa
+  if (modalContent.contains(e.target) && !_modalCloseIcon) return
+
+  const modalWrapper = modal.querySelector(".modal_wrapper")
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 
   //console.log("close:", modal);
 
   // Animation
+<<<<<<< HEAD
   app.style.removeProperty("filter");
   modalWrapper.classList.add("slide-out");
   modal.classList.remove("show");
   modal.classList.add("hide");
+=======
+  app.style.removeProperty("filter")
+  modalWrapper.classList.add("slide-out")
+  modal.classList.remove("show")
+  modal.classList.add("hide")
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 
   // Fade out and cleanup
   setTimeout(() => {
     //console.log("zavřeno");
+<<<<<<< HEAD
     modal.style.display = "none";
     modal.classList.remove("hide");
     modalWrapper.classList.remove("slide-out");
@@ -99,12 +175,27 @@ if (isWindows) {
   qSearchInput.placeholder = "Search (CTRL + K)...";
 } else if (isMac()) {
   qSearchInput.placeholder = "Search (CMD + K)...";
+=======
+    modal.style.display = "none"
+    modal.classList.remove("hide")
+    modalWrapper.classList.remove("slide-out")
+  }, 1000)
+})
+
+// SHORTCUTS
+// Search input placeholder
+if (isWindows) {
+  qSearchInput.placeholder = "Search (CTRL + K)..."
+} else if (isMac()) {
+  qSearchInput.placeholder = "Search (CMD + K)..."
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 }
 
 document.addEventListener("keydown", (e) => {
   //console.log(e.key)
   const pressed =
     (e.ctrlKey && e.key.toLowerCase() === "k") ||
+<<<<<<< HEAD
     (e.metaKey && e.key.toLowerCase() === "k");
 
   if (pressed) {
@@ -119,6 +210,22 @@ setTimeout(() => {
     qSearchInput.style.removeProperty("box-shadow");
   });
 }, 300);
+=======
+    (e.metaKey && e.key.toLowerCase() === "k")
+
+  if (pressed) {
+    e.preventDefault()
+    qSearchInput.focus()
+    const _qSearchInput = (qSearchInput.style.boxShadow = "var(--box-shadow)")
+  }
+})
+
+setTimeout(() => {
+  qSearchInput.addEventListener("blur", () => {
+    qSearchInput.style.removeProperty("box-shadow")
+  })
+}, 300)
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 
 /*
  **************
@@ -128,6 +235,7 @@ setTimeout(() => {
 // Search
 
 // AJAX các bài tập
+<<<<<<< HEAD
 const mainEl = document.querySelector("main");
 const menuItems = document.querySelectorAll(".menu_item");
 const ajaxContent = document.querySelector(".ajax-content");
@@ -172,10 +280,50 @@ function currentArticle(item) {
 
 // FETCH page content
 /*
+=======
+const menuItems = document.querySelectorAll(".menu_item")
+const ajaxContent = document.querySelector(".ajax-content")
+const tabHome = document.querySelector("#home")
+const mainContentDefault = document.querySelector(".main_content--default")
+
+/* 
+tabToDo.addEventListener("click", () => {
+  if (tabToDo.classList.contains("onhover")) {
+    console.log("Load r")
+    return
+  } else {
+    // on click hide the default content
+    mainContentDefault.classList.add("hidden")
+    // COPY trên mạng ạ
+    fetch("to-do.html")
+      .then((response) => {
+        if (!response.ok) throw new Error("Ko thể load file html")
+        return response.text()
+      })
+      .then((html) => {
+        const main = document.querySelector(".ajax-content")
+        main.insertAdjacentHTML("beforeend", html)
+
+        // Để có thể chạy file .js, nếu ko nó chỉ inject vào DOM mà không đc chạy
+        const script = document.createElement("script")
+        script.src = "./assets/js/to-do.js"
+        script.onload = () => console.log("to-do.js is run")
+        document.body.appendChild(script)
+      })
+      .catch((error) => {
+        console.error("Error on loading:", error)
+      })
+  }
+}) */
+
+function ajaxPageContent(item) {
+  /*
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
   - Mỗi bài tập e chia ra thành separate PAGES và chỉ load content của chính nó (HTML, JS) mà ko phải lặp lại GLOBAL content của web.
   - Các files [id]html, [id].js của từng bài tập e đặt tên = với id của từng menu_item để dễ quản lý & sử lý code.
   - Đoạn fetch e copy trên mạng và tối ưu lại để ko lặp lại code cho mỗi menu_item khi đc clicked và action phải thực thi.
   */
+<<<<<<< HEAD
 function ajaxPageContent(item) {
   animateSlideRight();
 
@@ -247,3 +395,81 @@ menuItems.forEach((item) => {
     ajaxPageContent(item);
   };
 });
+=======
+  return fetch(`${item.id}.html`) // ID name should be same as .js files names
+    .then((response) => {
+      if (!response.ok) throw new Error(`Ko thể load file html: ${item.id}.js`)
+      return response.text()
+    })
+    .then((html) => {
+      const main = document.querySelector(".ajax-content")
+      main.insertAdjacentHTML(
+        "beforeend",
+        `<article class="${item.id}">${html}</article>
+`
+      )
+      //const currentPageContent = document.querySelectorAll("article")
+      //currentPageContent.forEach((el) => el.classList.add("show"))
+
+      // Để có thể chạy file .js, nếu ko nó chỉ inject vào DOM mà ko đc call
+      const script = document.createElement("script")
+      script.src = `./assets/js/${item.id}.js`
+      script.onload = () => console.log(`${item.id}.js is run`)
+      document.body.appendChild(script)
+    })
+    .catch((error) => {
+      console.error("Error on loading:", error)
+    })
+}
+const currentPageContent = document.querySelectorAll("article")
+
+showCurrentPage = () => {
+  const currentPageContent = document.querySelectorAll("article")
+  currentPageContent.forEach((el) => el.classList.includes(`${item.id}`))
+  console.log(item)
+}
+
+menuItems.forEach((item) => {
+  currentPageContent.forEach((el) => el.classList.add("show"))
+  item.onclick = () => {
+    if (item.classList.contains("onhover")) {
+      console.log(`${item.id}.js already loaded`)
+      return
+    } else if (
+      console.log(currentPageContent)
+      currentPageContent.forEach((el) => el.classList.includes(`${item.id}`))
+    ) {
+      console.log("hello")
+    } else {
+      // Run the page content - load by ajax
+      ajaxPageContent(item)
+    }
+
+    // When click - remove onhover class of every item element ò menuItems
+    menuItems.forEach((item) => {
+      item.classList.remove("onhover")
+      ajaxContent.classList.remove("hidden")
+    })
+    item.classList.add("onhover") // Thanks to item.onclick add onhover only on clicked item
+    ajaxContent.setAttribute("data-set", item.id)
+
+    if (mainContentDefault) {
+      // In case mainContentDefault not exists
+      mainContentDefault.classList.add("hidden")
+    }
+
+    if (ajaxContent.dataset.set === item.id) {
+      const currentPageContentt = document.querySelectorAll("article")
+
+      currentPageContentt.forEach((el) => el.classList.toggle("ahoj"))
+    } else if (currentPageContent) {
+      console.log("not found")
+    }
+  }
+})
+
+tabHome.addEventListener("click", () => {
+  mainContentDefault.classList.remove("hidden")
+  ajaxContent.innerHTML = "" // Chỉ để xoá content nên ko sợ XSS phải ko ạ?
+})
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2

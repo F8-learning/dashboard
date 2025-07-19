@@ -166,7 +166,11 @@ header {
   z-index: 3;
 }
 input.search {
+<<<<<<< HEAD
   min-width: 220px;
+=======
+  width: 220px;
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
   padding: 6px 14px 6px 40px;
   color: var(--body-text-color--light);
   border-radius: 8px;
@@ -176,7 +180,11 @@ input.search {
 
 .header_search input:focus {
   color: var(--text-black-color--light);
+<<<<<<< HEAD
   width: calc(100% + 10px);
+=======
+  width: 230px;
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
   transition: all 0.3s ease;
 }
 .search--icon:hover {
@@ -280,7 +288,10 @@ sidebar {
   width: 25%;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 30px 20px;
+<<<<<<< HEAD
   z-index: 4;
+=======
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 }
 sidebar > * {
   padding: 20px;
@@ -324,6 +335,7 @@ sidebar > .menu_item {
   font-size: 1.05rem;
   line-height: normal;
 }
+<<<<<<< HEAD
 /* MAIN CONTENT */
 main {
   padding: 30px 60px;
@@ -361,6 +373,15 @@ main.slide-right.animate::before {
 }
 h1.hell {
   font-size: 3rem;
+=======
+main {
+  padding: 30px 60px;
+  background-color: var(--background-light);
+  width: 75%;
+}
+h1.hell {
+  font-size: 4rem;
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
   color: #0d0c22;
 }
 sidebar #home {
@@ -371,11 +392,14 @@ sidebar #home h2 {
   font-size: 1.25rem;
   line-height: normal;
 }
+<<<<<<< HEAD
 article {
   transform: translateX(0);
   opacity: 1;
   transition: all ease-in-out 0.5s;
 }
+=======
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 
 /* MODALS contents */
 .modal {
@@ -467,18 +491,27 @@ article {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+<<<<<<< HEAD
 .show,
 .active {
   opacity: 1;
   visibility: visible;
   display: block;
+=======
+.show {
+  opacity: 1;
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 }
 .hide {
   opacity: 0;
   transition: all 1s ease;
 }
+<<<<<<< HEAD
 .hidden,
 article {
+=======
+.hidden {
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
   visibility: hidden;
   display: none;
 }
@@ -629,6 +662,7 @@ article {
     opacity: 1;
   }
 }
+<<<<<<< HEAD
 
 /**
  * ----------------------------------------
@@ -661,6 +695,8 @@ article {
     transform: translateX(0);
   }
 }
+=======
+>>>>>>> 54d3472c1c1819f057e371dd67381cb405f931d2
 /**
  * ----------------------------------------
  * animation fade-static
