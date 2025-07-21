@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Píta 1.0</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/images/favicon/favicon-192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="270x270"
+      href="./assets/images/favicon/favicon-270.png"
+    />
+
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+  </head>
+  <body>
+    <app class="fadeIn-static">
+      <header class="flex jc-sb">
+        <!-- LOGO -->
+        <div class="logo scale-down-center">
+          <img src="./assets/images/logo/M-logo.webp" alt="" />
+        </div>
+
+        <div class="header_nav--wrapper flex gap-normal ai-c slide-left">
+          <!-- SEARCH -->
+          <div class="header_search flex ai-c">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon search--icon">
+              <path d="m21 21-4.34-4.34" />
+              <circle cx="11" cy="11" r="8" />
+            </svg>
+            <input
+              class="search"
+              type="search"
+              name="q"
+              placeholder="Search..."
+            />
+          </div>
+
+          <!-- THEME SWITCHER -->
+          <div class="header_theme--switcher">
+            <input id="themeSwitcher" class="ThemeToggle" type="checkbox" />
+          </div>
+
+          <!-- USER NAV -->
+          <div class="header_user">
+            <img src="./assets/images/pes.webp" alt="User avatar" srcset="" />
+          </div>
+        </div>
+      </header>
+      <div class="app_wrapper flex f-nowrap gap30">
+        <sidebar>
+          <div id="home" class="menu_item flex ai-c onhover">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon">
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+              />
+            </svg>
+            <h2 class="menu_heading">Home works</h2>
+          </div>
+
+          <div id="to-do" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-list-checks-icon lucide-list-checks"
+            >
+              <path d="m3 17 2 2 4-4" />
+              <path d="m3 7 2 2 4-4" />
+              <path d="M13 6h8" />
+              <path d="M13 12h8" />
+              <path d="M13 18h8" />
+            </svg>
+            <span class="menu_text">To do</span>
+          </div>
+
+          <div id="tabs" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-list-collapse-icon lucide-list-collapse"
+            >
+              <path d="M10 12h11" />
+              <path d="M10 18h11" />
+              <path d="M10 6h11" />
+              <path d="m3 10 3-3-3-3" />
+              <path d="m3 20 3-3-3-3" />
+            </svg>
+            <span class="menu_text">Tabs</span>
+          </div>
+
+          <div id="slider" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-gallery-vertical-end-icon lucide-gallery-vertical-end"
+            >
+              <path d="M7 2h10" />
+              <path d="M5 6h14" />
+              <rect width="18" height="12" x="3" y="10" rx="2" />
+            </svg>
+            <span class="menu_text">Slider</span>
+          </div>
+
+          <div id="tinder" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-piggy-bank-icon lucide-piggy-bank"
+            >
+              <path
+                d="M11 17h3v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a3.16 3.16 0 0 0 2-2h1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1a5 5 0 0 0-2-4V3a4 4 0 0 0-3.2 1.6l-.3.4H11a6 6 0 0 0-6 6v1a5 5 0 0 0 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"
+              />
+              <path d="M16 10h.01" />
+              <path d="M2 8v1a2 2 0 0 0 2 2h1" />
+            </svg>
+            <span class="menu_text">Tinder</span>
+          </div>
+
+          <div id="live-code" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-braces-icon lucide-braces"
+            >
+              <path
+                d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+              />
+              <path
+                d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+              />
+            </svg>
+            <span class="menu_text">Live code</span>
+          </div>
+
+          <div id="wordplay" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-play-icon lucide-play"
+            >
+              <polygon points="6 3 20 12 6 21 6 3" />
+            </svg>
+            <span class="menu_text">Wordplay</span>
+          </div>
+
+          <div id="music-player" class="menu_item flex ai-c">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon lucide lucide-music-icon lucide-music"
+            >
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" />
+            </svg>
+            <span class="menu_text">Music player</span>
+          </div>
+        </sidebar>
+
+        <main>
+          <!-- CONTENT DEFAULT -->
+          <div class="main_content--default">
+            <h1 class="hell">console.log("Hello", " ", "world")</h1>
+            <br>
+            <p>
+              This website is not fully responsive yet — improvements are
+              planned soon.</br>It performs best in the Chrome browser with a screen
+              resolution of 1750px or higher.</br>Dark mode is also on the way, stay
+              tuned
+            </p>
+            <div class="tags">
+              <a href="#" target="_blank" rel="noopener noreferrer">Github Repo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">Github Page</a>
+            </div>
+            
+          </div>
+          <!-- CONTENT TO DO -->
+          <div class="ajax-content"></div>
+          <!-- CONTENT TABS -->
+          <!-- CONTENT WORDPLAY -->
+          <!-- CONTENT MUSIC PLAYER -->
+        </main>
+      </div>
+
+      <footer><a href="./changelog.txt">Changelog</a></footer>
+    </app>
+
+    <!-- MODALS -->
+    <!-- Modal THEME SWITCHER content -->
+    <div class="modal themeSwitcher_body">
+      <div class="modal_wrapper">
+        <div class="modal_glow"></div>
+        <div class="modal_content">
+          <!-- <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon modal--close lucide-circle-x">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m15 9-6 6" />
+              <path d="m9 9 6 6" />
+            </svg> -->
+          Vì tâm hồn đen tối nên chưa làm dark theme ạ.
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Search -->
+    <div class="modal search_body">
+      <div class="modal_wrapper">
+        <div class="modal_glow"></div>
+        <div class="modal_content">Nhập từ khoá muốn tìm kiếm.</div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
