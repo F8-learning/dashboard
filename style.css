@@ -86,7 +86,6 @@ h6 {
   --body-text-color--light: #abacae;
   --primary-color: #f05123;
   --secondary-color: #246ff4;
-  --active-color-dark: #071224;
   --border-radius: 16px;
   /* sizes */
   --sm-screen: 1400px;
@@ -330,7 +329,6 @@ main {
   padding: 30px 60px;
   background-color: var(--background-light);
   box-shadow: rgba(0, 0, 0, 0.15) 0.95px 0.95px 3.6px;
-  scrollbar-color: var(--active-color-dark) transparent;
   width: 75%;
   transition: all 1s ease-in-out;
 }
@@ -364,9 +362,6 @@ main.slide-right.animate::before {
 h1.hell {
   font-size: 3rem;
   color: #0d0c22;
-}
-main .tags {
-  padding-top: 40px;
 }
 sidebar #home {
   border-bottom: 1px solid var(--border-color--light);
@@ -693,25 +688,6 @@ article {
   }
 }
 
-/* AJAX CONTENTS */
-.intro {
-  margin-bottom: 4rem;
-  width: 70%;
-}
-.intro p {
-  opacity: 0.5;
-  font-size: 19px;
-}
-/* .intro > h2 {
-  font-size: 3rem;
-} */
-.tags a {
-  padding-right: 14px;
-  font-size: 20px;
-}
-.intro p {
-  padding-top: 20px;
-}
 /* RESPO */
 @media (max-width: 1500px) {
   h1.hell {
