@@ -18,7 +18,7 @@
 .slide {
   position: relative;
   min-width: 100%;
-  height: 400px;
+  height: 380px;
   flex-shrink: 0;
   text-align: center;
   font-size: 80px;
@@ -89,10 +89,10 @@ button.slider-next {
   background: no-repeat right center url("/assets/images/slider/slide1.webp");
 }
 .slide.second {
-  background: no-repeat right center url("/assets/images/slider/slide2.jpg");
+  background: no-repeat right center url("/assets/images/slider/slide2.webp");
 }
 .slide.third {
-  background: no-repeat right center url("/assets/images/slider/slide3.jpg");
+  background: no-repeat right center url("/assets/images/slider/slide3.webp");
 }
 .slide h2,
 .slide p {
