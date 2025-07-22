@@ -86,13 +86,13 @@ button.slider-next {
 }
 
 .slide.first {
-  background: no-repeat right center url("/assets/images/slider/slide1.webp");
+  background: no-repeat right center url("assets/images/slider/slide1.webp");
 }
 .slide.second {
-  background: no-repeat right center url("/assets/images/slider/slide2.webp");
+  background: no-repeat right center url("assets/images/slider/slide2.webp");
 }
 .slide.third {
-  background: no-repeat right center url("/assets/images/slider/slide3.webp");
+  background: no-repeat right center url("assets/images/slider/slide3.webp");
 }
 .slide h2,
 .slide p {
